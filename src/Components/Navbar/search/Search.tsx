@@ -46,7 +46,7 @@ export function Search() {
       },700)
       return()=>clearTimeout(callFetch);
     }
-  },[val]);
+  },[val,fetchList]);
   const handleRef=(text:string)=>{
     handleInpoutRef('none');
     setVal(text);
@@ -78,9 +78,9 @@ export function Search() {
       <div className={styles.search__list} ref={ref}>
         <ul>
 
-        { terms.map((item)=>{
+        { terms.map((item,index)=>{
            return (
-            <li onClick={()=>handleRef(item)}>{item}</li>
+            <li onClick={()=>handleRef(item)} key={index}>{item}</li>
            )
         })}
         </ul>

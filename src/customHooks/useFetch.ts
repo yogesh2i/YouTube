@@ -32,7 +32,7 @@ const useFetch = (url:string) => {
         }
         })();
         
-  }, [url]);
+  }, [url,options]);
 
   return [{filters,feed}];
 };

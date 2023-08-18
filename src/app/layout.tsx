@@ -23,9 +23,8 @@ export default function RootLayout({
     <html lang="en">
         <Providers>
       <body >
-         <HomeLayout children={children}/>
-         
-         
+         <HomeLayout>{children}</HomeLayout>
+        
         </body>
         </Providers>
     </html>

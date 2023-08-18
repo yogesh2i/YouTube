@@ -13,7 +13,7 @@ import { GoDownload } from 'react-icons/go';
 import { AiOutlineDislike, AiOutlineLike } from 'react-icons/ai';
 import { abbreviateNumber } from '@/directives/viewCount';
 
-export default function page() {
+export default function Page() {
   const dispatch = useAppDispatch();
   const {video} = useParams();
   const {currentVid,relatedFeed,status,thumbnail} = useAppSelector((state)=>state.videoPlayerData)
@@ -22,7 +22,7 @@ export default function page() {
     dispatch(menuButton());
     dispatch(fetchVideoData(video));
   
-  },[]);
+  },[dispatch,video]);
 
   return (
     <>
