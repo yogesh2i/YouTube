@@ -1,0 +1,112 @@
+@import '../../../mixins.scss';
+
+.sidebar{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 15px;
+    padding-right: 18px;
+  
+    .sidebar__button{
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        padding: 8px 10px;
+        margin-left: 10px;
+        font-size: 0.85rem;
+        font-weight: 450;
+        line-height: 1.8rem;
+        cursor: pointer;
+        border-radius: 12px;
+        text-decoration: none;
+        color: black;
+        width: 100%;
+        &:hover{
+            background-color: #f3f0f0;
+        }
+        svg{
+            font-size: 1.4rem;
+            opacity: 0.8;
+            
+        }
+        .youtube__icon{
+            display: flex;
+            align-items: center;
+            svg{
+                color: red;
+            }
+        }
+    }
+    
+    .ruler{
+        display: block;
+        border: 0.3px solid rgb(243, 241, 241);
+        width: 100%;
+        margin: 14px 0;
+    }
+    .title{
+        margin-left: 15px;
+        margin-bottom: 8px;
+        font-size: 1rem;
+        font-weight: 400;
+
+    }
+    .extra__links__container{
+        padding-left: 18px;
+       margin-bottom: 15px;
+       display: flex;
+       flex-wrap: wrap;
+        .extra__links{
+            text-decoration: none;
+            color: rgb(114, 114, 114);
+            font-size: 13px;
+            font-weight: 600;
+            margin: 0 6px;
+        }
+        &:last-of-type{
+            a{
+
+                font-size: 10px;
+                font-weight: 300;
+            }
+        }
+        
+    }
+}
+
+.collapsed__sidebar{
+  
+    display: flex;
+   
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        margin-top: 15px;
+        padding-right: 18px;
+
+    
+    .sidebar__button{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 12px 0;
+        margin-left: 2px;
+        font-size: 0.65rem;
+        font-weight: 450;
+        line-height: 1.8rem;
+        cursor: pointer;
+        border-radius: 12px;
+        text-decoration: none;
+        color: black;
+       
+        &:hover{
+            background-color: #f3f0f0;
+        }
+        svg{
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+    }
+}

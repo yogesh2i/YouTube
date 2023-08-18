@@ -1,0 +1,81 @@
+@import '../mixins.scss';
+.main{
+    display: flex;
+    overflow: hidden;
+    height: 91vh;
+    .short__sidebar{
+        width: 7%;
+        &:hover{
+
+            overflow-y: hidden !important;
+        }
+    }
+    .expand__sidebar{
+        width: 17%;
+
+    }
+    .sidebar{
+        overflow-x: hidden;
+        overflow-y: hidden;
+        display: none;
+        
+        @include sm{
+            display: block;
+        }
+        &:hover{
+            overflow-y: scroll;
+
+        }
+        &::-webkit-scrollbar {
+            width: 8px;  
+                    /* width of the entire scrollbar */
+          }
+          
+        &::-webkit-scrollbar-track {
+            background: white; 
+           
+         
+                   /* color of the tracking area */
+          }
+          
+        &::-webkit-scrollbar-thumb {
+            background-color: rgb(123, 123, 123);    /* color of the scroll thumb */
+            border-radius: 20px;       /* roundness of the scroll thumb */
+            /* creates padding around scroll thumb */
+        }
+        
+        
+    }
+    .content{
+       
+        width: 100%;
+        overflow-y: scroll;
+        &::-webkit-scrollbar{
+            display: none;
+            @include sm{
+                display: block;
+            }
+        }
+        @include sm{
+            flex: 0.99;
+            &::-webkit-scrollbar {
+                width: 8px;  
+                        /* width of the entire scrollbar */
+              }
+              
+            &::-webkit-scrollbar-track {
+                background: white; 
+               
+             
+                       /* color of the tracking area */
+              }
+              
+            &::-webkit-scrollbar-thumb {
+                background-color: rgb(123, 123, 123);    /* color of the scroll thumb */
+                border-radius: 20px;       /* roundness of the scroll thumb */
+                /* creates padding around scroll thumb */
+            }
+        }
+    }
+    
+}

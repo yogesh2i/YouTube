@@ -1,0 +1,68 @@
+@import "../mixins.scss";
+
+.shimmer__effect_web {
+  display: none;
+  margin-top: 20px;
+
+  @include sm {
+    display: flex;
+  }
+
+  div {
+    display: flex;
+    margin-left: 10px;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.shimmer__effect_android {
+  @include sm {
+    display: none;
+  }
+
+  margin-top: 25px;
+
+  div {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+  }
+}
+
+.shimmer {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+
+  .shimmer__effect_android {
+    margin-top: 25px;
+    display: block;
+
+    @include sm {
+      display: none;
+    }
+
+    div {
+      display: flex;
+      gap: 10px;
+      margin-top: 5px;
+    }
+  }
+
+  .shimmer__effect_web {
+    width: 30%;
+    margin-top: 25px;
+    display: none;
+
+    @include sm {
+      display: block;
+    }
+
+    div {
+      display: flex;
+      gap: 10px;
+      margin-top: 5px;
+    }
+  }
+}
