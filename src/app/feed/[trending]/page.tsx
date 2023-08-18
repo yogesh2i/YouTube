@@ -16,7 +16,8 @@ export default function Trending({params}:{ params : {trending : string}}) {
   }
   useEffect(()=>{
     callFetch('now');
-  },[callFetch]);
+    // eslint-disable-next-line
+  },[]);
  
   return (
       <>
