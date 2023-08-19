@@ -1,4 +1,4 @@
-import {Inter} from 'next/font/google' ;
+import { Inter } from 'next/font/google';
 import React from 'react';
 import './globals.css'
 import type { Metadata } from 'next'
@@ -21,12 +21,12 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-        <Providers>
-      <body >
-         <HomeLayout>{children}</HomeLayout>
-        
+      <Providers>
+        <body >
+          <HomeLayout>{children}</HomeLayout>
+
         </body>
-        </Providers>
+      </Providers>
     </html>
   )
 }

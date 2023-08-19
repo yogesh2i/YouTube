@@ -1,119 +1,108 @@
-@import '../../../mixins.scss';
+@import "../../../mixins.scss";
 
 .main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
+  height: 56px;
+
+  @include sm {
+    padding: 0 16px;
+  }
+
+  .left {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 0 8px;
-    height: 56px;
+    flex: 0.3;
+    gap: 1.3rem;
 
+    .menu {
+      cursor: pointer;
+      display: none;
+      margin-left: 4px;
+      @include sm {
+        display: block;
+      }
+
+      svg {
+        padding: 4px;
+        border-radius: 50%;
+        height: 31px;
+        display: block;
+        width: 31px;
+
+        &:hover {
+          background-color: rgb(198, 197, 197);
+        }
+      }
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+
+      .logo__text {
+        font-size: 1.2rem;
+        font-weight: 800;
+      }
+      sup {
+        font-weight: 300;
+        position: relative;
+        top: -9px;
+        font-size: 10px;
+      }
+    }
+  }
+
+  .center {
+    padding-left: 5rem;
+    display: none;
     @include sm {
-        padding: 0 16px;
+      flex: 2.3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .right {
+    flex: 0.4;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    @include sm {
+      justify-content: space-evenly;
     }
 
-    .left {
-        display: flex;
-        align-items: center;
-        flex: 0.3;
-        gap: 1.3rem;
-
-        .menu {
-            cursor: pointer;
-            display: none;
-            margin-left: 4px;
-            @include sm {
-                display: block;
-            }
-
-            svg {
-                padding: 4px;
-                border-radius: 50%;
-                height: 31px;
-                display: block;
-                width: 31px;
-
-                &:hover {
-
-                    background-color: rgb(198, 197, 197);
-                }
-            }
+    span {
+      cursor: pointer;
+      border-radius: 50%;
+      padding: 5px;
+      &:first-of-type {
+        @include sm {
+          display: none;
         }
-
-        .logo {
-            display: flex;
-            align-items: center;
-
-            .logo__text {
-                font-size: 1.2rem;
-                font-weight: 800;
-               
-
-            }
-                sup {
-                    font-weight: 300;
-                    position: relative;
-                    top: -9px;
-                    font-size: 10px;
-
-                }
-        }
-    }
-
-    .center {
-        padding-left: 5rem;
+      }
+      &:nth-of-type(2) {
         display: none;
         @include sm {
-            flex: 2.3;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-    
+          display: block;
         }
+      }
+      &:hover {
+        @include sm {
+          background-color: rgb(176, 175, 175);
+        }
+      }
+
+      svg {
+        font-size: 1.5rem;
+        opacity: 0.7;
+        @include sm {
+          font-size: 1.8rem;
+        }
+      }
     }
-
-    .right {
-        flex: 0.4;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        @include sm{
-            justify-content: space-evenly;    
-        }
-       
-       
-        span{
-            cursor: pointer;
-            border-radius: 50%;
-            padding: 5px;
-            &:first-of-type{
-                @include sm{
-    
-                    display: none;
-                }
-            }
-            &:nth-of-type(2){
-                display: none;
-                @include sm{
-                    display: block;
-                }
-            }
-            &:hover {
-                @include sm{
-                    background-color: rgb(176, 175, 175);
-
-                }
-            }
-           
-            svg {
-                font-size: 1.5rem;
-                opacity: 0.7;
-                @include sm{
-                    font-size: 1.8rem;
-                    
-                }
-            }
-        }
-       
-
-    }
+  }
 }

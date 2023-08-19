@@ -8,23 +8,23 @@ import { useAppSelector } from '@/redux/hooks';
 
 
 export default function HomeLayout({
-    children,
-  }: {
-    children: React.ReactNode
-  }) {
-      const expandSidebar = useAppSelector((state)=>state.buttonReducer.activeMenu);
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  const expandSidebar = useAppSelector((state) => state.buttonReducer.activeMenu);
 
   return (
     <>
-       <Navbar/>
-          <div className={styles.main}>
-    <div className={`${styles.sidebar} ${expandSidebar?`${styles.short__sidebar}`:`${styles.expand__sidebar}`}`}> <Sidebar/></div>
-    <div className={styles.content}>
-        {children}
-    </div>
-     
-   </div>
-   <Footer/>
+      <Navbar />
+      <div className={styles.main}>
+        <div className={`${styles.sidebar} ${expandSidebar ? `${styles.short__sidebar}` : `${styles.expand__sidebar}`}`}> <Sidebar /></div>
+        <div className={styles.content}>
+          {children}
+        </div>
+
+      </div>
+      <Footer />
     </>
   )
 }
