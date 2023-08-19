@@ -19,7 +19,7 @@ export function Search() {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '0e10804dadmsha1f47556d9a38cfp1039b6jsn2ff5da63924b',
+      'X-RapidAPI-Key': '6d08210ef4msh1e2294ffb752a98p1b13b5jsne3c9592016b1',
       'X-RapidAPI-Host': 'yt-api.p.rapidapi.com'
     }
   };
