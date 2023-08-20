@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { options } from "@/directives/apiOptions";
 export type feedState = {
    feed: any,
    filters: string[],
@@ -17,11 +16,11 @@ const initialState = {
 
 export const fetchHomeData = createAsyncThunk(('/feed'), async (url: string) => {
    try {
-      const response = await fetch(url, options);
+      const response = await fetch(`api/proxy?url=${url}`);
       const result = await response.json();
       let filter = result.filters;
       try {
-         const nextResponse = await fetch(`https://yt-api.p.rapidapi.com/home?token=${result.continuation}&geo=IN`, options);
+         const nextResponse = await fetch(`api/proxy?url=https://yt-api.p.rapidapi.com/home?token=${result.continuation}&geo=IN`);
          const nextResult: any = await nextResponse.json();
          let newFeed = [...result.data, ...nextResult.data];
          return { newFeed, filter };
@@ -35,7 +34,7 @@ export const fetchHomeData = createAsyncThunk(('/feed'), async (url: string) => 
 })
 export const fetchFilterData = createAsyncThunk(('/feed/filter'), async (url: string) => {
    try {
-      const response = await fetch(url, options);
+      const response = await fetch(`api/proxy?url=${url}`);
       const result = await response.json();
       let filterFeed = result.data;
       return filterFeed;
@@ -48,7 +47,7 @@ export const fetchFilterData = createAsyncThunk(('/feed/filter'), async (url: st
 
 export const fetchTrendingData = createAsyncThunk(('/feed/trending'), async (url: string) => {
    try {
-      const response = await fetch(url, options);
+      const response = await fetch(`/api/proxy?url=${url}`);
       const result = await response.json();
       let filter = result.data;
       return filter;

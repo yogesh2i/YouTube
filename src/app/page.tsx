@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import Content from '@/Components/Home/content/Content';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { fetchHomeData } from '@/redux/slices/feedSlice';
+import 'dotenv/config';
 
 
 export default function Home() {

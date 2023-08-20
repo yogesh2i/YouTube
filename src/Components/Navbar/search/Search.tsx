@@ -8,7 +8,7 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { updateFeed } from '@/redux/slices/feedSlice';
 import { IoSearchOutline } from 'react-icons/io5';
 import { inputDisplayButton } from '@/redux/slices/buttonSlice';
-import { options } from '@/directives/apiOptions';
+
 
 export function Search() {
   const [val, setVal] = useState('');
@@ -24,7 +24,7 @@ export function Search() {
   }
   const fetchList = async (query: string) => {
     try {
-      const data = await fetch(`https://yt-api.p.rapidapi.com/search?query=${query}&geo=IN`, options);
+      const data = await fetch(`/api/proxy?url=https://yt-api.p.rapidapi.com/search?query=${query}&geo=IN`);
       const result = await data.json();
       dispatch(updateFeed(result.data));
       { result.refinements ? setTerms(result.refinements) : null };
@@ -41,7 +41,8 @@ export function Search() {
       }, 700)
       return () => clearTimeout(callFetch);
     }
-  }, [val, fetchList]);
+     // eslint-disable-next-line
+  }, [val]);
   const handleRef = (text: string) => {
     handleInpoutRef('none');
     setVal(text);

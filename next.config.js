@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
     images: {
         remotePatterns: [
@@ -16,6 +17,9 @@ const nextConfig = {
           },
         ],
       },
+    env:{
+      NEXT_PUBLIC_SECRET_KEY : '6d08210ef4msh1e2294ffb752a98p1b13b5jsne3c9592016b1'
+    }
    
 }
 

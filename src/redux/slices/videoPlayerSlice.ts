@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { options } from "@/directives/apiOptions";
 export type feedState = {
   currentVid: any,
   relatedFeed: string[],
@@ -17,9 +16,9 @@ const initialState = {
 
 export const fetchVideoData = createAsyncThunk(('watch'), async (video: string | string[]) => {
   try {
-    const data = await fetch(`https://yt-api.p.rapidapi.com/dl?id=${video}&cgeo=IN`, options);
+    const data = await fetch(`/api/proxy?url=https://yt-api.p.rapidapi.com/dl?id=${video}&cgeo=IN`);
     const res = await data.json();
-    const data2 = await fetch(`https://yt-api.p.rapidapi.com/related?id=${video}&geo=IN`, options)
+    const data2 = await fetch(`/api/proxy?url=https://yt-api.p.rapidapi.com/related?id=${video}&geo=IN`)
     const res2 = await data2.json();
     let feed = res2.data;
     return { res, feed };
