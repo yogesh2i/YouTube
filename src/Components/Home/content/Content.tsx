@@ -38,6 +38,7 @@ export default function Content(props: any) {
       <div className={styles.content__container}>
         <div className={styles.search__filter}>
           <ul>
+        {console.log(feed)}
             {filters && filters.map((item: any, i: number) => {
               return <li key={i} onClick={() => { handleFilter(item.continuation) }} className={styles.filter__name}>{item.filter}</li>
             })}
@@ -49,11 +50,11 @@ export default function Content(props: any) {
             if (item.type === 'video') {
               return <div className={styles.video__content} key={i} onClick={() => playLink(item.videoId, item?.channelThumbnail[0]?.url)}>
                 <div className={styles.thumbnail}>
-                  <Image className={styles.img} alt='thumbnail' src={item.thumbnail[0].url} fill priority></Image>
+                 { <Image className={styles.img} alt='thumbnail' src={item.thumbnail[0].url} fill priority></Image>}
                   <span>{item.lengthText}</span>
                 </div>
                 <div className={styles.video__details}>
-                  <Image className={styles.channel__logo} alt='channel' src={item?.channelThumbnail[0]?.url} width={68} height={68}></Image>
+                  {item?.channelThumbnail?<Image className={styles.channel__logo} alt='channel' src={item?.channelThumbnail[0]?.url} width={68} height={68}></Image>:null}
                   <div className={styles.video__text}>
                     <p className={styles.video__title}>{item.title}</p>
                     <p className={styles.channel__name}>{item.channelTitle}</p>

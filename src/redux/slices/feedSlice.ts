@@ -22,8 +22,15 @@ export const fetchHomeData = createAsyncThunk(('/feed'), async (url: string) => 
       try {
          const nextResponse = await fetch(`api/proxy?url=https://yt-api.p.rapidapi.com/home?token=${result.continuation}&geo=IN`);
          const nextResult: any = await nextResponse.json();
-         let newFeed = [...result.data, ...nextResult.data];
-         return { newFeed, filter };
+          if(nextResult?.code!=='403'){
+             let newFeed = [...result.data, ...nextResult.data];
+             return { newFeed, filter };
+            }else{
+               let newFeed = [...result.data];
+               return {newFeed,filter}
+            }
+        
+         
       } catch (error) {
          console.log(error)
       }

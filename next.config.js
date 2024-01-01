@@ -15,6 +15,14 @@ const nextConfig = {
             protocol: 'https',
             hostname: 'www.youtube.com',
           },
+          {
+            protocol: 'https',
+            hostname: 'yt3.googleusercontent.com',
+          },
+          {
+            protocol: 'https',
+            hostname: 'lh3.googleusercontent.com'
+          }
         ],
       },
     env:{
