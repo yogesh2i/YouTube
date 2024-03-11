@@ -6,7 +6,7 @@ import ReactPlayer from 'react-player';
 import styles from './Video.module.scss';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { menuButton } from '@/redux/slices/buttonSlice';
-import RelatedVideo from '@/Components/RelatedVideo/RelatedVideo';
+import RelatedVideo from '@/app/watch/Components/RelatedVideo/RelatedVideo';
 import { fetchVideoData } from '@/redux/slices/videoPlayerSlice';
 import Image from 'next/image';
 import { PiShareFatThin } from 'react-icons/pi';
