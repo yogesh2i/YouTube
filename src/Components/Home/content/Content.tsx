@@ -24,9 +24,9 @@ export default function Content(props: any) {
 
   function handleFilter(continuation: string) {
     if (continuation === undefined) {
-      dispatch(fetchFilterData(`https://yt-api.p.rapidapi.com/home?geo=IN`))
+      dispatch(fetchFilterData(`https://yt-api.p.rapidapi.com/home`))
     } else {
-      dispatch(fetchFilterData(`https://yt-api.p.rapidapi.com/home?token=${continuation}&geo=IN`))
+      dispatch(fetchFilterData(`https://yt-api.p.rapidapi.com/home?token=${continuation}`))
     }
   }
   if (status === 'idle' || status === 'pending') {
@@ -38,9 +38,8 @@ export default function Content(props: any) {
       <div className={styles.content__container}>
         <div className={styles.search__filter}>
           <ul>
-        {console.log(feed)}
             {filters && filters.map((item: any, i: number) => {
-              return <li key={i} onClick={() => { handleFilter(item.continuation) }} className={styles.filter__name}>{item.filter}</li>
+              return <li key={item.filter} onClick={() => { handleFilter(item.continuation) }} className={styles.filter__name}>{item.filter}</li>
             })}
 
           </ul>

@@ -10,7 +10,7 @@ export default function Home() {
   const dispatch = useAppDispatch();
   const { feed, filters, status } = useAppSelector((state: any) => state.feedReducer);
   useEffect(() => {
-    dispatch(fetchHomeData('https://yt-api.p.rapidapi.com/home?geo=IN'));
+    dispatch(fetchHomeData('https://yt-api.p.rapidapi.com/home'));
   }, [dispatch])
   return (
 

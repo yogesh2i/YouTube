@@ -15,7 +15,11 @@ export  async function GET(req :NextRequest,res: NextResponse){
    const url = getStringParamFromURL("url", req.url);
     const response = await fetch(`${url}`,options);
     const data = await response.json();
-   return NextResponse.json(data,{status: 200})
+    console.log(response.status)
+    if(response.status===200){
+      return NextResponse.json(data,{status: 200})
+    }
+    return NextResponse.json({"message":data.error},{status: response.status})
  
     
  }catch(error){

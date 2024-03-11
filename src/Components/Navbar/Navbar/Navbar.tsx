@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import styles from './Navbar.module.scss';
-import { AndroidSearch, Search } from '../search/Search';
+import { AndroidSearch, Search } from '../../../app/search/Components/search/Search';
 import { BiUserCircle } from 'react-icons/bi';
 import { IoIosNotificationsOutline } from 'react-icons/io';
 import { IoVideocamOutline } from 'react-icons/io5';
