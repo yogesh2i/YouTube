@@ -69,11 +69,11 @@ export default function Page() {
   else {
     return (
       <>
-        {currentVid &&
-
+     
+        {currentVid && 
           <div className={styles.video__player}>
             <div className={styles.video__container}>
-              <ReactPlayer className={styles.video__box} playing={true} url={currentVid?.formats[1].url} height={'31vw'} width={'auto'} controls={true} />
+              <ReactPlayer className={styles.video__box} playing={true} url={currentVid?.status!="fail"?currentVid?.formats[currentVid?.formats?.length-1]?.url:null} height={'31vw'} width={'auto'} controls={true} />
               <div className={styles.video__stats}>
                 <p className={styles.video__title}>{currentVid.title}</p>
                 <div className={styles.video__options}>

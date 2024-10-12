@@ -47,7 +47,7 @@ export default function Content(props: any) {
         <div className={styles.video__content__container}>
           {feed && feed.map((item: any, i: number) => {
             if (item.type === 'video') {
-              return <div className={styles.video__content} key={i} onClick={() => playLink(item.videoId, item?.channelThumbnail[0]?.url)}>
+              return <div className={styles.video__content} key={i} onClick={() => playLink(item.videoId, item?.channelThumbnail!=null?item?.channelThumbnail[0]?.url:null)}>
                 <div className={styles.thumbnail}>
                  { <Image className={styles.img} alt='thumbnail' src={item.thumbnail[0].url} fill priority></Image>}
                   <span>{item.lengthText}</span>
